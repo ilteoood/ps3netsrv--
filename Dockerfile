@@ -11,4 +11,4 @@ FROM alpine:latest
 RUN ["apk", "add", "g++"]
 ENV GAMES_FOLDER /games
 COPY --from=builder /netsrv/ps3netsrv--/ps3netsrv++ /ps3netsrv++
-ENTRYPOINT sh -c "mkdir $GAMES_FOLDER && /ps3netsrv++ $GAMES_FOLDER"
+ENTRYPOINT sh -c "mkdir -p $GAMES_FOLDER && /ps3netsrv++ $GAMES_FOLDER"
