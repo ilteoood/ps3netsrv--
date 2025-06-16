@@ -2,7 +2,7 @@ FROM alpine:latest AS builder
 WORKDIR /netsrv
 RUN ["apk", "update"]
 RUN ["apk", "add", "make", "g++", "git"]
-RUN ["git", "clone", "--recursive", "git://github.com/ilteoood/ps3netsrv--.git"]
+RUN ["git", "clone", "--recursive", "https://github.com/ilteoood/ps3netsrv--"]
 WORKDIR /netsrv/ps3netsrv--
 RUN ["git", "submodule", "update", "--init"]
 RUN ["make", "CXX=g++"]
